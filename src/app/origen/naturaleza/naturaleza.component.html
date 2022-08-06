@@ -1,0 +1,94 @@
+<style>
+  .verdito {
+    background: #99d98c !important;
+  }
+</style>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="verdito vh-100">
+  <div class="container bg-success position-absolute top-50 start-50 translate-middle rounded-3 border border-2 border-dark p-3">
+    <div class="row">
+      <div class="card col-4 offset-1 bg-white rounded-3 border border-2 border-dark">
+        <div class="card-body">
+          <h5 class="card-title">Poderes</h5>
+          <p class="card-text">La Unión posee la capacidad de controlar a las otras dos entidades cósmicas, ya que se
+          rigen bajo las leyes naturales. También es capaz de controlar todo el universo, incluyendo seres vivos,
+            objetos inanimados y planos de la realidad.
+          </p>
+          <button class="btn btn-primary" (click)="open(planReal)">Los planos de la realidad</button>
+          <hr>
+          <p class="card-text">Cuando existe un desequilibrio en el ciclo natural, sus poderes se resienten y disminuyen,
+            pues la naturaleza necesita restaurar su propio orden.
+          </p>
+        </div>
+      </div>
+
+      <div class="card col-4 offset-2 bg-white rounded-3 border border-2 border-dark">
+        <div class="card-body">
+          <h5 class="card-title">Comportamiento</h5>
+          <p class="card-text">La Unión se manifiesta por medio de los ideales. Elige a sus representantes cuando estos
+          eligen el equilibrio por encima de todo, pero teniendo en cuenta sus emociones humanas, que también les da
+          algo de ese equilibrio.</p>
+          <a routerLink="/ser"
+             routerLinkActive="activebutton"
+             ariaCurrentWhenActive="page"
+             class="btn btn-primary">
+            ¿Qué hizo después La Unión?
+          </a>
+          <hr>
+          <p class="card-text">El material divino en el que se condensa es la origita,
+            capaz de otorgar autoconsciencia a la vida vegetal y de dar una conexión a la Unión a los humanos que la toquen.
+          </p>
+          <button class="btn btn-primary" (click)="open(matDiv)">¿Qué son  los materiales divinos?</button>
+        </div>
+      </div>
+    </div>
+    <ng-template #matDiv let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="material-divino-title">Materiales divinos</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <p class="card-text">Los <b>materiales divinos</b> son la forma en la que las entidades condensan su esencia. Se puede
+          ver como la respuesta a de qué están hechas la naturaleza, la guerra o la magia.
+        </p>
+      </div>
+    </ng-template>
+
+    <ng-template #planReal let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="planos-realidad-title">Planos de la realidad</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        <ngb-accordion [closeOthers]="true">
+          <ngb-panel id="static-1" title="Mundo Espiritual">
+            <ng-template ngbPanelContent>
+              <p class="card-text">Este plano es una copia del Mundo Físico, pero intangible y superpuesto al mundo físico.
+                Al estar gobernado por La Sombra, las leyes físicas se rompen y permiten que, aunque estando en partes
+                distintas de la Fragua Cósmica, es capaz de solaparse con el Mundo Físico.
+              </p>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="static-2" title="Mundo Físico">
+            <ng-template ngbPanelContent>
+              <p class="card-text">Este plano es lo que conocemos como nuestro universo. Se puede decir que es el plano
+                principal de la realidad y que en él se encuentra la presencia de todas las entidades cósmicas. La
+                Naturaleza gobierna las leyes de este Mundo junto a las otras dos.
+              </p>
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="static-3" title="Mundo Demoníaco">
+            <ng-template ngbPanelContent>
+              <p class="card-text">Este plano es lo que conocemos como nuestro universo. Se puede decir que es el plano
+                principal de la realidad y que en él se encuentra la presencia de todas las entidades cósmicas. La
+                Naturaleza gobierna las leyes de este Mundo junto a las otras dos.
+              </p>
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+      </div>
+    </ng-template>
+  </div>
+</body>
